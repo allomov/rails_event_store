@@ -100,6 +100,7 @@ eventDecoder_ =
     in
     succeed Event
         |> requiredAt [ "attributes", "event_type" ] string
+        |> requiredAt [ "attributes", "event_name" ] string
         |> requiredAt [ "id" ] string
         |> requiredAt [ "attributes", "metadata", "timestamp" ] Iso8601.decoder
         |> requiredAt [ "attributes", "data" ] (value |> Json.Decode.map (encode 2))
