@@ -33,6 +33,12 @@ module RubyEventStore
       metadata[:event_type] || self.class.name
     end
 
+    # Name of event. Used to show it in UI. You can override it in your events.
+    # @return [String]
+    def event_name
+      event_type
+    end
+
     # Timestamp from metadata
     #
     # @return [Time, nil]

@@ -419,7 +419,7 @@ renderCausedEvents baseUrl causedEvents =
 
 
 renderCausedEvent : Url.Url -> Api.Event -> Html Msg
-renderCausedEvent baseUrl { eventType, eventId } =
+renderCausedEvent baseUrl { eventName, eventId } =
     tr []
         [ td
             [ class "p-0 pt-2"
@@ -428,7 +428,7 @@ renderCausedEvent baseUrl { eventType, eventId } =
                 [ class "text-red-700 no-underline"
                 , href (Route.eventUrl baseUrl eventId)
                 ]
-                [ text eventType ]
+                [ text eventName ]
             ]
         , td
             [ class "p-0 pt-2"
